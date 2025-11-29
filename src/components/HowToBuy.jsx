@@ -5,24 +5,32 @@ const HowToBuy = () => {
     {
       step: 1,
       title: "Create a Wallet",
-      description: "Download Phantom or Solflare wallet and create your Solana wallet"
+      description: "Download Phantom or Solflare wallet"
     },
     {
       step: 2,
       title: "Get SOL",
-      description: "Purchase SOL from exchanges like Coinbase, Binance, or FTX"
+      description: "Purchase SOL from any major exchange"
     },
     {
       step: 3,
       title: "Connect to DEX",
-      description: "Go to Raydium or Orca and connect your wallet"
+      description: "Go to Raydium or Orca DEX"
     },
     {
       step: 4,
       title: "Swap for SOLT",
-      description: "Swap your SOL for SOLToken using our contract address"
+      description: "Swap your SOL for SOLToken"
     }
   ];
+
+  const handleCopyAddress = () => {
+    // Fake contract address
+    const fakeContract = 'So1anaT0k3nM0ckAddr3ss123456789';
+    navigator.clipboard.writeText(fakeContract).then(() => {
+      alert('Contract address copied to clipboard!');
+    });
+  };
 
   return (
     <section id="howtobuy" className="how-to-buy">
@@ -39,8 +47,8 @@ const HowToBuy = () => {
         </div>
         <div className="contract-address">
           <h4>Contract Address:</h4>
-          <code>So11111111111111111111111111111111111111112</code>
-          <button className="btn-copy">Copy</button>
+          <code>So1anaT0k3nM0ckAddr3ss123456789</code>
+          <button className="btn-copy" onClick={handleCopyAddress}>Copy</button>
         </div>
       </div>
     </section>

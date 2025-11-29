@@ -75,13 +75,34 @@ body {
   opacity: 0.8;
 }
 
+/* Fake Wallet Button Styles */
 .wallet-button {
-  background: linear-gradient(45deg, #FF6B6B, #4ECDC4) !important;
-  border: none !important;
-  border-radius: 25px !important;
-  padding: 8px 16px !important;
-  font-size: 0.9rem !important;
-  white-space: nowrap;
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.wallet-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.wallet-button.connected {
+  background: linear-gradient(45deg, #4ECDC4, #FF6B6B);
+}
+
+/* Mobile responsive for wallet button */
+@media (max-width: 768px) {
+  .wallet-button {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
 }
 
 /* Hero Section - Fixed padding for header */
@@ -486,9 +507,10 @@ section h2 {
   }
 
   .hero .container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
     gap: 2rem;
     text-align: center;
+    min-width: 65%;
   }
 
   .hero-stats {
@@ -671,4 +693,15 @@ section, .header, .footer, .hero {
   border: none;
   border-radius: 50%;
   color: white;
+}
+
+.hero .hero-content {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 35px;
+  padding: 25px;
+  width: 70vw;
+}
+
+.hero h1 {
+  font-size: 3.3rem;
 }

@@ -1,7 +1,11 @@
 import React from 'react';
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
-const Header = () => {
+const Header = ({ isConnected, walletAddress, onConnectWallet }) => {
+  const shortenAddress = (address) => {
+    if (!address) return '';
+    return `${address.slice(0, 4)}...${address.slice(-4)}`;
+  };
+
   return (
     <header className="header">
       <div className="container">
@@ -13,7 +17,16 @@ const Header = () => {
           <a href="#tokenomics">Tokenomics</a>
           <a href="#howtobuy">How to Buy</a>
           <a href="#roadmap">Roadmap</a>
-          <WalletMultiButton className="wallet-button" />
+          <button 
+            className={`wallet-button ${isConnected ? 'connected' : ''}`}
+            onClick={onConnectWallet}
+          >
+            {isConnected ? (
+              <span>Connected: {shortenAddress(walletAddress)}</span>
+            ) : (
+              'Connect Wallet'
+            )}
+          </button>
         </nav>
       </div>
     </header>
