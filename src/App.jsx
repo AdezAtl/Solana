@@ -14,7 +14,6 @@ import Roadmap from './components/Roadmap';
 import Footer from './components/Footer';
 
 import './App.css';
-import '@solana/wallet-adapter-react-ui/styles.css';
 
 function App() {
   const network = WalletAdapterNetwork.Devnet;
